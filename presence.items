@@ -1,0 +1,11 @@
+Switch Casper_Mobile "Casper's Mobile" <network> { channel="network:pingdevice:192_168_11_75:online" }
+Switch Casper_IOT_Laptop "Casper's Home Laptop" <network> { channel="network:servicedevice:399fcfdd:online" }
+Switch Zelda_Mobile "Zelda's Mobile" <network> { channel="network:pingdevice:192_168_11_5:online" }
+Switch Zelda_Laptop "Zelda's Laptop" <network> { channel="network:servicedevice:0ecabbcf:online" }
+Switch Zian_Tablet "Zian's Tablet" <network> { channel="network:pingdevice:192_168_11_217:online" }
+Switch Mizuanne_Tablet "Mizuanne's Tablet" <network> { channel="network:pingdevice:192_168_11_99:online" }
+Switch Zian_Laptop "Zian's Laptop" <network> { channel="network:servicedevice:686cfbf9:online" }
+Switch Mizuanne_Laptop "Mizuanne's Laptop" <network> { channel="network:servicedevice:46ec187f:online" }
+Switch Chromecast "Chromecast" <network> { channel="network:servicedevice:f081832a:online" }
+Switch LGwebOSTV "LGwebOSTV" <network> { channel="network:servicedevice:6d00c6f6:online" }
+Switch Alexa "Alexa" <network> { channel="network:servicedevice:833d0f9e:online" }

@@ -1,0 +1,126 @@
+import org.openhab.core.library.types.*
+import org.openhab.core.persistence.*
+import org.openhab.model.script.actions.*
+import org.java.math.*
+import org.joda.time.*
+
+rule "turn Lights on"
+when
+  Time cron "0 30 17 1/1 * ? *"
+   then
+      sendBroadcastNotification("Lights On")
+      stdylamp.sendCommand(ON)
+      tvlamp.sendCommand(ON)
+      ziannightlight.sendCommand(ON)
+      miznightlight.sendCommand(ON)
+      carprtlight.sendCommand(ON)
+      garden.sendCommand(ON)
+end
+
+rule "turn Lights off"
+when
+  Time cron "0 50 23 1/1 * ? *"
+   then
+      sendBroadcastNotification("Lights Off")
+      stdylamp.sendCommand(OFF)
+      tvlamp.sendCommand(OFF)
+      carprtlight.sendCommand(OFF)
+      garden.sendCommand(OFF)
+      ziannightlight.sendCommand(OFF)
+      miznightlight.sendCommand(OFF)
+end
+
+rule "PumpOn"
+when
+  Item Pump changed from OFF to ON
+then
+     sendBroadcastNotification("Pump Running")
+end
+ 
+rule "PumOff"
+when
+  Item Pump changed from ON to OFF
+then
+     sendBroadcastNotification("Pump Off")
+end
+
+rule "20min Front Cycle"
+when
+  Item SprinklerCycle received update ON
+then
+      sendBroadcastNotification("Front House:Zone4-On")
+      sendCommand(FHSprinklerSystemZone4, ON)
+      createTimer(now.plusMinutes(20)) [|
+           sendBroadcastNotification("Front House:Zone4-Off, Front Garden:Zone5-On")
+           sendCommand( FHSprinklerSystemZone5, ON)
+           sendCommand( FHSprinklerSystemZone4, OFF)
+           createTimer(now.plusMinutes(20)) [|
+               sendBroadcastNotification("Front Garden:Zone5-Off, Pavement:Zone6-On")
+               sendCommand( FHSprinklerSystemZone6, ON)
+               sendCommand( FHSprinklerSystemZone5, OFF)
+               createTimer(now.plusMinutes(20)) [|
+                   sendBroadcastNotification("Pavement:Zone6-Off, Front Grass:Zone7-On")
+                   sendCommand( FHSprinklerSystemZone7, ON)
+                   sendCommand( FHSprinklerSystemZone6, OFF)
+                   createTimer(now.plusMinutes(20)) [|
+                       sendBroadcastNotification("Front Grass:Zone7-Off, Back Grass:Zone3-On")
+                       sendCommand( FHSprinklerSystemZone3, ON)
+                       sendCommand( FHSprinklerSystemZone7, OFF)
+                       createTimer(now.plusMinutes(20)) [|
+                           sendBroadcastNotification("Sprinkler Cycle Off")
+                           sendCommand( FHSprinklerSystemZone1, OFF)
+                           sendCommand( FHSprinklerSystemZone2, OFF)
+                           sendCommand( FHSprinklerSystemZone3, OFF)
+                           sendCommand( FHSprinklerSystemZone4, OFF)
+                           sendCommand( FHSprinklerSystemZone5, OFF)
+                           sendCommand( FHSprinklerSystemZone6, OFF)
+                           sendCommand( FHSprinklerSystemZone7, OFF)
+                           sendCommand( FHSprinklerSystemZone8, OFF)
+                       ]
+                   ]
+               ]
+           ]
+      ]
+      sendCommand(SprinklerCycle, OFF)
+end
+
+rule "Sprinkler Cycle"
+when
+  Time cron "0 0 6 ? * MON,WED,FRI,SUN *"
+then
+      sendBroadcastNotification("Front House:Zone4-On")
+      sendCommand(FHSprinklerSystemZone4, ON)
+      createTimer(now.plusMinutes(20)) [|
+           sendBroadcastNotification("Front House:Zone4-Off, Front Garden:Zone5-On")
+           sendCommand( FHSprinklerSystemZone5, ON)
+           sendCommand( FHSprinklerSystemZone4, OFF)
+           createTimer(now.plusMinutes(20)) [|
+               sendBroadcastNotification("Front Garden:Zone5-Off, Pavement:Zone6-On")
+               sendCommand( FHSprinklerSystemZone6, ON)
+               sendCommand( FHSprinklerSystemZone5, OFF)
+               createTimer(now.plusMinutes(20)) [|
+                   sendBroadcastNotification("Pavement:Zone6-Off, Front Grass:Zone7-On")
+                   sendCommand( FHSprinklerSystemZone7, ON)
+                   sendCommand( FHSprinklerSystemZone6, OFF)
+                   createTimer(now.plusMinutes(20)) [|
+                       sendBroadcastNotification("Front Grass:Zone7-Off, Back Grass:Zone3-On")
+                       sendCommand( FHSprinklerSystemZone3, ON)
+                       sendCommand( FHSprinklerSystemZone7, OFF)
+                       createTimer(now.plusMinutes(20)) [|
+                           sendBroadcastNotification("Sprinkler Cycle Off")
+                           sendCommand( FHSprinklerSystemZone1, OFF)
+                           sendCommand( FHSprinklerSystemZone2, OFF)
+                           sendCommand( FHSprinklerSystemZone3, OFF)
+                           sendCommand( FHSprinklerSystemZone4, OFF)
+                           sendCommand( FHSprinklerSystemZone5, OFF)
+                           sendCommand( FHSprinklerSystemZone6, OFF)
+                           sendCommand( FHSprinklerSystemZone7, OFF)
+                           sendCommand( FHSprinklerSystemZone8, OFF)
+                       ]
+                   ]
+               ]
+           ]
+      ]
+      sendCommand(SprinklerCycle, OFF)
+end
+

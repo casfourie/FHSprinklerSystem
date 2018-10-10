@@ -1,0 +1,2 @@
+Dimmer Volume { channel="chromecast:chromecast:cbfa2b85bd5d68de5d2e4c7811a27027:volume" }
+Player Music { channel="chromecast:chromecast:cbfa2b85bd5d68de5d2e4c7811a27027:control" }

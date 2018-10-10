@@ -1,0 +1,22 @@
+//This is the Items File
+//Lights
+Switch stdylamp "Study" <light> (Study) ["Lighting"] { mqtt=">[mosquitto:cmnd/sonoffstdy/POWER:command:*:default],<[mosquitto:tele/sonoffstdy/STATE/POWER:state:default]" }
+Switch tvlamp "TV" <light> (TV) ["Lighting"] { mqtt=">[mosquitto:cmnd/sonofftvc/POWER:command:*:default],<[mosquitto:tele/sonofftvc/STATE/POWER:state:default]" }
+Switch carprtlight "Cars" <light> (Cars) ["Lighting"]  { mqtt=">[mosquitto:cmnd/sonoffcarp/POWER:command:*:default],<[mosquitto:tele/sonoffcarp/STATE/POWER:state:default]" }
+Switch ziannightlight "Zian" <light> (Zian) ["Lighting"] { mqtt=">[mosquitto:cmnd/sonoffzian/POWER:command:*:default],<[mosquitto:tele/sonoffzian/STATE/POWER:state:default]" }
+Switch miznightlight "Mizuanne" <light> (Mizuanne) ["Lighting"] { mqtt=">[mosquitto:cmnd/sonoffmiz/POWER:command:*:default],<[mosquitto:tele/sonoffmiz/STATE/POWER:state:default]" }
+Switch garden "Garden" <light> (Garden) ["Lighting"] { mqtt=">[mosquitto:cmnd/sonoffout/POWER:command:*:default],<[mosquitto:tele/sonoffout/STATE/POWER:state:default]" }
+
+Number stdylamp_RSSI "Study: RSSI [%d %%]" (gRSSI)         { mqtt="<[mosquitto:tele/sonoffstdy/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number tvlamp_RSSI "TV: RSSI [%d %%]" (gRSSI)            { mqtt="<[mosquitto:tele/sonofftvc/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number carprtlight_RSSI "Cars: RSSI [%d %%]" (gRSSI)      { mqtt="<[mosquitto:tele/sonoffcarp/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number ziannightlight_RSSI "Zian: RSSI [%d %%]" (gRSSI) { mqtt="<[mosquitto:tele/sonoffzian/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number miznightlight_RSSI "Mizuanne: RSSI [%d %%]" (gRSSI) { mqtt="<[mosquitto:tele/sonoffmiz/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number garden_RSSI "Garden: RSSI [%d %%]" (gRSSI) { mqtt="<[mosquitto:tele/sonoffout/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+
+Switch carp_light " "  <network> { channel="network:pingdevice:192_168_11_208:online" }
+Switch miz_lamp " "  <network> { channel="network:pingdevice:192_168_11_155:online" }
+Switch zian_lamp " "  <network> { channel="network:pingdevice:192_168_11_70:online" }
+Switch tv_lamp " " <network> { channel="network:pingdevice:192_168_11_21:online" }
+Switch stdy_lamp " " <network> { channel="network:pingdevice:192_168_11_113:online" }
+Switch grdn_light " " <network> { channel="network:pingdevice:192_168_11_209:online" }

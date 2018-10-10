@@ -1,0 +1,60 @@
+sitemap home label="Fourie-SmartHouse"
+{
+        Frame label="" {
+        Text label="Lights" icon="light" {
+        Frame label="Lighting Items" {
+        Switch item=stdylamp label="Study Lamp" mappings=[OFF="Off",ON="On"]
+        Text item=stdy_lamp 
+        Switch item=tvlamp label="TV Lamp" mappings=[OFF="Off",ON="On"]
+        Text item=tv_lamp
+        Switch item=carprtlight label="Car Port" mappings=[OFF="Off",ON="On"]
+        Text item=carp_light
+        Switch item=garden label="Garden Light" mappings=[OFF="Off",ON="On"]
+        Text item=grdn_light
+        Switch item=ziannightlight label="Zian's Lamp" mappings=[OFF="Off",ON="On"]
+        Text item=zian_lamp
+        Switch item=miznightlight label="Mizuanne's Lamp" mappings=[OFF="Off",ON="On"]
+        Text item=miz_lamp
+     }}}
+        Frame label="" {
+        Text label="Sprinklers" icon="garden" {
+        Frame  item=Status label="Online? [%s]"{
+        Switch item=FHSprinklerSystemZone3 mappings=[OFF="OFF",ON="ON"]
+        Switch item=FHSprinklerSystemZone4 mappings=[OFF="OFF",ON="ON"]
+        Switch item=FHSprinklerSystemZone5 mappings=[OFF="OFF",ON="ON"]
+        Switch item=FHSprinklerSystemZone6 mappings=[OFF="OFF",ON="ON"]
+        Switch item=FHSprinklerSystemZone7 mappings=[OFF="OFF",ON="ON"]
+        Switch item=FHSprinklerSystemZone8 mappings=[OFF="OFF",ON="ON"]
+        Text item=Sprinkler_RSSI 
+        Switch item=SprinklerCycle
+     }}}
+        Frame label="" {
+        Text label="Who is Home?" icon="presence" {
+        Frame label="" {
+         Text item=Casper_Mobile label="Casper's Mobile"
+         Text item=Casper_IOT_Laptop label="Casper's Home Laptop"
+         Text item=Zelda_Mobile label="Zelda's Mobile"
+         Text item=Zelda_Laptop label="Zelda's Home Laptop"
+         Text item=Mizuanne_Tablet label="Mizuanne's Tablet"
+         Text item=Zian_Tablet label="Zian's Tablet"
+         Text item=Zian_Laptop label="Zian Laptop"
+         Text item=Mizuanne_Laptop label="Mizuanne Laptop"
+         Text item=Chromecast label="ChromeCast TV"
+         Text item=LGwebOSTV label="LGwebOSTV"
+         Text item=Alexa  label="Alexa"
+     }}}
+        Frame label="" {
+        Text label="Security" icon="motion" {
+        Frame label="Garage Items" {
+        Text item=Switch1
+        Switch item=relay1 label="Open/Close" mappings=[ON="Activate"]
+     }}}
+        Frame label="" {
+        Text label="Gas Levels" icon="gas" {
+        Frame label="Gas Levels" {
+        Switch item=SharpTVPower label="TV Power" mappings=[ON="Power"]
+        Switch item=SharpTVVolume label="TV Volume" mappings=[OFF="Up",ON="Down"]
+        Switch item=SharpTVChannel label="TV Channel" mappings=[OFF="Up",ON="Down"]
+        Switch item=SharpTVMute label="TV Mute" mappings=[ON="Mute"]
+     }}}
+}

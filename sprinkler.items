@@ -1,0 +1,13 @@
+//This is the Items File
+//Sprinkler
+Switch FHSprinklerSystemZone1 "Zone 1" <water> (Zone1) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/1:command:ON:1],>[mosquitto:FHSprinkler1/station/1:command:OFF:0],<[mosquitto:FHSprinkler1/station/1/status:state:default]"}
+Switch FHSprinklerSystemZone2 "Zone 2" <water> (Zone2) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/2:command:ON:1],>[mosquitto:FHSprinkler1/station/2:command:OFF:0],<[mosquitto:FHSprinkler1/station/2/status:state:default]"}
+Switch FHSprinklerSystemZone3 "Zone 3" <water> (Zone3) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/3:command:ON:1],>[mosquitto:FHSprinkler1/station/3:command:OFF:0],<[mosquitto:FHSprinkler1/station/3/status:state:default]"}
+Switch FHSprinklerSystemZone4 "Zone 4" <water> (Zone4) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/4:command:ON:1],>[mosquitto:FHSprinkler1/station/4:command:OFF:0],<[mosquitto:FHSprinkler1/station/4/status:state:default]"}
+Switch FHSprinklerSystemZone5 "Zone 5" <water> (Zone5) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/5:command:ON:1],>[mosquitto:FHSprinkler1/station/5:command:OFF:0],<[mosquitto:FHSprinkler1/station/5/status:state:default]"}
+Switch FHSprinklerSystemZone6 "Zone 6" <water> (Zone6) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/6:command:ON:1],>[mosquitto:FHSprinkler1/station/6:command:OFF:0],<[mosquitto:FHSprinkler1/station/6/status:state:default]"}
+Switch FHSprinklerSystemZone7 "Zone 7" <water> (Zone7) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/7:command:ON:1],>[mosquitto:FHSprinkler1/station/7:command:OFF:0],<[mosquitto:FHSprinkler1/station/7/status:state:default]"}
+Switch FHSprinklerSystemZone8 "Pump ONLY" <water> (Zone8) ["Switchable"] {mqtt=">[mosquitto:FHSprinkler1/station/8:command:ON:1],>[mosquitto:FHSprinkler1/station/8:command:OFF:0],<[mosquitto:FHSprinkler1/station/8/status:state:default]"}
+Number Sprinkler_RSSI "Wifi Signal: RSSI [%d %%]" <network> (gRSSI) { mqtt="<[mosquitto:FHSprinkler1/station/RSSI:state:default]" }
+Switch Status " " <network> { channel="network:pingdevice:192_168_11_163:online" }
+Switch SprinklerCycle "20min Sprinkler Cycle" <water> (Cycle) ["Switchable"]
