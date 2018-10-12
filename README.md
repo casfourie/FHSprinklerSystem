@@ -13,3 +13,4 @@
 - Sample item 8
 - Sample item 9
 - Sample item 10
+- More Detailed in sample branch 
