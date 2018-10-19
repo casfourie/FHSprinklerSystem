@@ -1,4 +1,4 @@
-# <a href='https://www.openhab.org/'><img src='https://www.google.co.za/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwj5ucDa9pHeAhWMx4UKHS42A0kQjB16BAgBEAQ&url=https%3A%2F%2Fcommunity.openhab.org%2Ft%2Fnew-logo-for-openhab%2F35140&psig=AOvVaw28_-SeZaTmMspMUm9Whtud&ust=1540018658425137' height='60' alt='Openhab Logo' /></a> A great cource on Github
+# <a href='https://github.com/openhab'><img src='https://www.myopenhab.org/images/hero.jpg' height='60' alt='Openhab Logo' /></a> A great cource on Github
 
 # This is an OpenHab Esp8266 project
 ## Its a sprinkler System Implementation
