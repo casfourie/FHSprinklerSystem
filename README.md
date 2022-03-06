@@ -21,3 +21,4 @@
 - Irrigation Power Supply (24-Volt/750 mA Transformer)
 - Alexa (I used the Echo)
 - raspberry pi 3
+![image](https://user-images.githubusercontent.com/35445043/156918336-c73f6d94-38d0-4d28-bd76-d6d3753c4b64.png)
